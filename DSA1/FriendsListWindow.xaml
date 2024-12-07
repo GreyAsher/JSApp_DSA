@@ -6,6 +6,88 @@
         xmlns:local="clr-namespace:DSA1"
         mc:Ignorable="d"
         Title="FriendsListWindow" Height="450" Width="800">
-    <DataGrid x:Name="friendListGrid"/>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="None" ImageSource="Images/3332.jpg" AlignmentY="Top" AlignmentX="Center"/>
+        </Grid.Background>
+        <!-- Header Section -->
+        <DockPanel Background="Transparent" Height="60" VerticalAlignment="Top">
+            <TextBlock Text="Friend List" FontSize="20" FontWeight="Bold" Foreground="White"
+                       VerticalAlignment="Center" Margin="10"/>
+            <DockPanel HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10">
+                <Button Content="Friend Requests" Background="#ffd700" Foreground="Black" 
+                        Margin="0,0,10,0" Width="150" BorderBrush="#4267B2"/>
+                <Button Content="Find Friends" Background="#ffd700" Foreground="Black" 
+                        Width="100" BorderBrush="#4267B2"/>
+            </DockPanel>
+        </DockPanel>
 
+        <!-- Tabs Section -->
+        <StackPanel Orientation="Horizontal" Background="White" Height="40" VerticalAlignment="Top" Margin="0,60,0,0">
+            <Button Content="All Friends" Background="White" BorderThickness="0" Padding="10" FontSize="14"/>
+            <Button Content="Recently Added" Background="White" BorderThickness="0" Padding="10" FontSize="14"/>
+            <Button Content="Work" Background="White" BorderThickness="0" Padding="10" FontSize="14"/>
+            <Button Content="Experience" Background="White" BorderThickness="0" Padding="10" FontSize="14"/>
+            <Button Content="Projects" Background="White" BorderThickness="0" Padding="10" FontSize="14"/>
+            <Button Content="Current City" Background="White" BorderThickness="0" Padding="10" FontSize="14"/>
+            <Button Content="More" Background="White" BorderThickness="0" Padding="10" FontSize="14"/>
+        </StackPanel>
+
+        <!-- Search Section -->
+        <DockPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,60,10,0">
+            <TextBox Width="200" Height="30" VerticalAlignment="Center" Text="Search for your friends..." Margin="10,5,0,5"/>
+        </DockPanel>
+
+        <!-- Friend List -->
+        <ScrollViewer Margin="10,110,10,10">
+            <StackPanel>
+                <!-- Friend Row -->
+                <Border BorderThickness="1" BorderBrush="#E0E0E0" Margin="0,5" Background="White">
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <!-- Profile Picture -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- Name and Friend Count -->
+                            <ColumnDefinition Width="150"/>
+                            <!-- Button -->
+                        </Grid.ColumnDefinitions>
+                        <!-- Profile Picture -->
+                        <Ellipse Fill="Gray" Width="70" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0" Margin="5"/>
+
+                        <!-- Friend Name and Info -->
+                        <StackPanel VerticalAlignment="Center" Grid.Column="1" Margin="10,0">
+                            <TextBlock Text="John Doe" FontWeight="Bold" FontSize="16"/>
+                            <TextBlock Text="502 friends" FontSize="12" Foreground="Gray"/>
+                        </StackPanel>
+
+                        <!-- Action Button -->
+                        <Button Content="Friends" Background="White" Foreground="Black" 
+                                BorderBrush="Black" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="2"/>
+                    </Grid>
+                </Border>
+
+                <!-- Add additional friend rows here -->
+                <Border BorderThickness="1" BorderBrush="#E0E0E0" Margin="0,5" Background="White">
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <!-- Profile Picture -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- Name and Friend Count -->
+                            <ColumnDefinition Width="150"/>
+                            <!-- Button -->
+                        </Grid.ColumnDefinitions>
+                        <Ellipse Fill="Gray" Width="70" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0" Margin="5"/>
+                        <StackPanel VerticalAlignment="Center" Grid.Column="1" Margin="10,0">
+                            <TextBlock Text="Alice Johnson" FontWeight="Bold" FontSize="16"/>
+                            <TextBlock Text="714 friends" FontSize="12" Foreground="Gray"/>
+                        </StackPanel>
+                        <Button Content="Friends" Background="White" Foreground="Black" 
+                                BorderBrush="Black" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="2"/>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
 </Window>

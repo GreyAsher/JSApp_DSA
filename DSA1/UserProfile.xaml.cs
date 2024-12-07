@@ -19,16 +19,19 @@ namespace DSA1
 {
     public partial class UserProfile : Window
     {
-        MySqlConnection connection = new MySqlConnection("Server=localhost;" +
+        MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;" +
         "Database=project_database;UserName= root;" +
-        "Password=Cedric1234%%");
+        "Password=SQLDatabase404");
         public static int windowNumber { get; set; }
+        public static int searchUserKey { get; set; }
         public static List<int> keys = new List<int>();
         public UserProfile()
         {
             InitializeComponent();
             showInfo();
             addFriendList();
+
+            Friend_Grid.Children.Remove(Connect_Friend_Btn);
         }
 
         public UserProfile(User userInfo)
@@ -39,6 +42,8 @@ namespace DSA1
             Full_Name.Text = userInfo.First_Name + " " + userInfo.Last_Name;
             Job_Title_txtbox.Text = userInfo.JobTitle;
             Address_txtbox.Text = userInfo.Address;
+
+            searchUserKey = userInfo.Id;
 
         }
 
@@ -79,38 +84,39 @@ namespace DSA1
 
         private void ToggleExperienceEditable(bool isEditable)
         {
-            ExperienceTextBox1.IsReadOnly = !isEditable;
-            ExperienceTextBox2.IsReadOnly = !isEditable;
-            ExperienceTextBox3.IsReadOnly = !isEditable;
-            ExperienceTextBox4.IsReadOnly = !isEditable;
+            //ExperienceTextBox1.IsReadOnly = !isEditable;
+            //ExperienceTextBox2.IsReadOnly = !isEditable;
+            //ExperienceTextBox3.IsReadOnly = !isEditable;
+            //ExperienceTextBox4.IsReadOnly = !isEditable;
 
-            if (isEditable)
-            {
-                TextBox newExperience = new TextBox { Margin = new Thickness(0, 5, 0, 5), FontSize = 14, TextWrapping = TextWrapping.Wrap };
-                (ExperienceTextBox1.Parent as StackPanel).Children.Add(newExperience);
-            }
+            //if (isEditable)
+            //{
+            //    TextBox newExperience = new TextBox { Margin = new Thickness(0, 5, 0, 5), FontSize = 14, TextWrapping = TextWrapping.Wrap };
+            //    (ExperienceTextBox1.Parent as StackPanel).Children.Add(newExperience);
+            //}
         }
 
         private void ToggleEducationEditable(bool isEditable)
         {
-            EducationTextBox1.IsReadOnly = !isEditable;
-            EducationTextBox2.IsReadOnly = !isEditable;
-            EducationTextBox3.IsReadOnly = !isEditable;
+            //EducationTextBox1.IsReadOnly = !isEditable;
+            //EducationTextBox2.IsReadOnly = !isEditable;
+            //EducationTextBox3.IsReadOnly = !isEditable;
 
-            if (isEditable)
-            {
-                TextBox newEducation = new TextBox { Margin = new Thickness(0, 5, 0, 5), FontSize = 14, TextWrapping = TextWrapping.Wrap };
-                (EducationTextBox1.Parent as StackPanel).Children.Add(newEducation);
-            }
+            //if (isEditable)
+            //{
+            //    TextBox newEducation = new TextBox { Margin = new Thickness(0, 5, 0, 5), FontSize = 14, TextWrapping = TextWrapping.Wrap };
+            //    (EducationTextBox1.Parent as StackPanel).Children.Add(newEducation);
+            //}
         }
 
         private void AddFriend_Btn(object sender, RoutedEventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;" +
-             "Database=project_database;UserName= root;" +
-            "Password=SQLDatabase");
-            int Connect_Key = DB.otherUserKey;
+            MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;"
+                + "Database=project_database;UserName= root;" + "Password=SQLDatabase404");
+            int Connect_Key = searchUserKey;
             int Logged_In_UserKeey = MainWindow.userId;
+            MessageBox.Show("Other user key: " + Connect_Key);
+            MessageBox.Show("Cure user key: " + Logged_In_UserKeey);
             string query =
                 "INSERT INTO friends (user_id, friend_id) VALUES (@UserId, @FriendId)";
             try
@@ -147,8 +153,8 @@ namespace DSA1
             string query = "SELECT friend_id FROM friends WHERE user_id = @UserId";
             try
             {
-                using (MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;" +
-                    "Database=project_database;UserName=root;Password=SQLDatabase404"))
+                using (MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;" + 
+                    "Database=project_database;UserName= root;" + "Password=SQLDatabase404"))
                 {
                     connection.Open();
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))

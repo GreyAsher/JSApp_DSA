@@ -18,7 +18,7 @@ namespace DSA1
             Company_Email.Text = company.CompanyEmail;
             Company_Address.Text = company.CompanyAddress;
         }
-
+        public static int WindowNumber { get; set; }
         public Company_Profile()
         {
             InitializeComponent();
@@ -38,7 +38,6 @@ namespace DSA1
             int key = MainWindow.userId;
             if (MainWindow.companyUserMapList2.TryGetValue(key, out Company loggedUser))
             {
-
                 Company_Name.Text = loggedUser.CompanyName;
                 Company_Email.Text = loggedUser.CompanyEmail;
                 Company_Address.Text = loggedUser.CompanyAddress;
@@ -101,12 +100,34 @@ namespace DSA1
                 MessageBox.Show($"Error loading job feed: {ex.Message}");
             }
         }
-
+    
         private void BackButton(object sender, RoutedEventArgs e)
         {
-            Company_Search cs = new Company_Search();
-            this.Hide();
-            cs.Show();
+           
+        }
+
+        private void Profile_RB_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BackButton_btn(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Show: " + WindowNumber);
+            switch (WindowNumber)
+            {
+                case 1:
+                    Company_Search cs = new Company_Search();
+                    this.Hide();
+                    cs.Show();
+                    break;
+
+                case 2:
+                    Company_DashBoard sjw = new Company_DashBoard();
+                    this.Hide();
+                    sjw.Show();
+                    break;
+            }
         }
     }
 }

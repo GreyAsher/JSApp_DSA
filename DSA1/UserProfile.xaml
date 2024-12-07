@@ -16,7 +16,7 @@
         <!-- Profile Header -->
         <Border Grid.Row="0" Background="#800000" Padding="0
                 ">
-            <Grid Margin="0,2,0,0" Height="170" VerticalAlignment="Top">
+            <Grid x:Name="Friend_Grid" Margin="0,2,0,0" Height="170" VerticalAlignment="Top">
 
                 <Grid.Background>
                     <ImageBrush Stretch="None" ImageSource="Images/3332.jpg" AlignmentY="Top" AlignmentX="Center"/>
@@ -76,7 +76,7 @@
                             </Button.Template>
                         </Button>
 
-                        <Button Content="Connect" 
+                        <Button x:Name="Connect_Friend_Btn" Content="Connect" 
                             Background="#d4ac0d" 
                             Foreground="White" 
                             Margin="10,5,5,5" 
@@ -147,12 +147,7 @@
                 </StackPanel>
                 <Border BorderBrush="#D3D3D3" BorderThickness="1" Padding="10" CornerRadius="5" Background="#F9F9F9" Margin="0,0,0,20">
                     <ScrollViewer Height="200">
-                        <StackPanel Orientation="Vertical">
-                            <TextBox Text="Technical Writer - Proxycurl" FontWeight="Bold" FontSize="16" Margin="0,5,0,5" IsReadOnly="True" x:Name="ExperienceTextBox1" />
-                            <TextBox Text="Freelance Copywriter - Colton Randolph" FontWeight="Bold" FontSize="16" Margin="0,5,0,5" IsReadOnly="True" x:Name="ExperienceTextBox2" />
-                            <TextBox Text="May 2016 - Present | 7 years 6 months" FontSize="14" Margin="0,5,0,5" IsReadOnly="True" x:Name="ExperienceTextBox3" />
-                            <TextBox Text="Created conversion-focused copy for various clients." FontSize="14" TextWrapping="Wrap" Margin="0,5,0,5" IsReadOnly="True" x:Name="ExperienceTextBox4" />
-                        </StackPanel>
+                        <StackPanel Orientation="Vertical"/>
                     </ScrollViewer>
                 </Border>
 
@@ -163,11 +158,7 @@
                 </StackPanel>
                 <Border BorderBrush="#D3D3D3" BorderThickness="1" Padding="10" CornerRadius="5" Background="#F9F9F9">
                     <ScrollViewer Height="200">
-                        <StackPanel Orientation="Vertical">
-                            <TextBox Text="Bachelor of Arts in English - University of Kansas" FontSize="16" Margin="0,5,0,5" IsReadOnly="True" x:Name="EducationTextBox1" />
-                            <TextBox Text="Graduated in 2015" FontSize="14" Margin="0,5,0,5" IsReadOnly="True" x:Name="EducationTextBox2" />
-                            <TextBox Text="Relevant Courses: Creative Writing, Technical Communication" FontSize="14" TextWrapping="Wrap" Margin="0,5,0,5" IsReadOnly="True" x:Name="EducationTextBox3" />
-                        </StackPanel>
+                        <StackPanel Orientation="Vertical"/>
                     </ScrollViewer>
                 </Border>
             </StackPanel>

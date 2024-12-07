@@ -22,6 +22,7 @@ namespace DSA1
     {
         private List<User> allUsers = new List<User>();
         public static int WindowTracker;
+      
         public Applicant_search()
         {
             InitializeComponent();
@@ -38,7 +39,8 @@ namespace DSA1
         {
             List<User> applicantFeed = new List<User>();
             using (MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;" +
-                "Database=project_database;User ID=root;Password=SQLDatabase404"))
+"Database=project_database;UserName= root;" +
+"Password=SQLDatabase404"))
             {
                 try
                 {
@@ -97,19 +99,33 @@ namespace DSA1
         }
         private void viewProfile_btn(object sender, RoutedEventArgs e)
         {
+          
             if (JobList.SelectedItem is User selectedUser)
             {
+                this.Hide();
                 UserProfile.windowNumber = 2;
+                
                 UserProfile userSelected = new UserProfile(selectedUser);
                 userSelected.Show();
             }
         }
-
+        public static int As_WindowTracker;
         private void Back_Button(object sender, RoutedEventArgs e)
         {
-            DB db = new DB();
-            this.Hide();
-            db.Show();
+            switch (As_WindowTracker)
+            {
+                case 1:
+                    DB db = new DB();
+                    this.Hide();
+                    db.Show();
+                    break;
+                case 2:
+                    Company_DashBoard cd =new Company_DashBoard();
+                    this.Hide();
+                    cd.Show();
+                    break;
+            }
+       
         }
     }
 }

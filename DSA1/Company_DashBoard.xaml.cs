@@ -15,15 +15,16 @@ namespace DSA1
         public Company_DashBoard()
         {
             InitializeComponent();
-         
+            Applicant_search.As_WindowTracker = 2;
+            Company_Profile.WindowNumber = 2;
         }
-    
+        
         public static List<Jobs> Job_DataBase()
         {
             List<Jobs> jobFeed = new List<Jobs>();
             using (MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;" +
-    "Database=project_database;UserName= root;" +
-    "Password=10.0.0.1"))
+            "Database=project_database;UserName= root;" +
+            "Password=SQLD"))
             {
                 try
                 {
@@ -64,6 +65,25 @@ namespace DSA1
             Company_Profile cp = new Company_Profile();
             this.Hide();
             cp.Show();
+        }
+
+        private void applicantsearch_btn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void application_btn(object sender, RoutedEventArgs e)
+        {
+            Applicant_search ap = new Applicant_search();
+            this.Hide();
+            ap.Show();
+        }
+
+        private void Log_out_btn(object sender, RoutedEventArgs e)
+        {
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            this.Close();
         }
     }
 }

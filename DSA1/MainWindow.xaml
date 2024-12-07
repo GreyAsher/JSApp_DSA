@@ -34,7 +34,7 @@
         </Border>
 
         <!-- Sign In Section -->
-        <Border Grid.Column="1" CornerRadius="10" Background="White" Padding="20" VerticalAlignment="Stretch">
+        <Border Grid.Column="1" Background="White" Padding="20" VerticalAlignment="Stretch">
             <StackPanel>
                 <TextBlock Text="Sign In" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 

@@ -340,9 +340,6 @@
       <DependentUpon>Company_Search.xaml</DependentUpon>
     </Compile>
     <Compile Include="Email.cs" />
-    <Compile Include="Email_Page.xaml.cs">
-      <DependentUpon>Email_Page.xaml</DependentUpon>
-    </Compile>
     <Compile Include="FriendsListWindow.xaml.cs">
       <DependentUpon>FriendsListWindow.xaml</DependentUpon>
     </Compile>
@@ -353,19 +350,29 @@
     <Compile Include="LoginValidator.cs" />
     <Compile Include="Main\ObservableObject.cs" />
     <Compile Include="Main\RelayCommand.cs" />
+    <Compile Include="MessageWindow.xaml.cs">
+      <DependentUpon>MessageWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewsFeed.cs" />
+    <Compile Include="NewsFeedAltWindow.xaml.cs">
+      <DependentUpon>NewsFeedAltWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Post_Resume.xaml.cs">
       <DependentUpon>Post_Resume.xaml</DependentUpon>
     </Compile>
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resume_Class.cs" />
     <Compile Include="SearchJobWindow.xaml.cs">
       <DependentUpon>SearchJobWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserProfile.xaml.cs">
       <DependentUpon>UserProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkspaceWindow.xaml.cs">
+      <DependentUpon>WorkspaceWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="ApplicantUI.xaml">
       <SubType>Designer</SubType>
@@ -388,10 +395,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DB.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Email_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -418,6 +421,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MessageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewsFeedAltWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Post_Resume.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -439,6 +450,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkspaceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

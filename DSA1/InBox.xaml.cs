@@ -28,9 +28,8 @@ namespace DSA1
             string query = "SELECT * FROM the_emails_db";
             try
             {
-                using (MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;" +
-                  "Database=project_database;UserName= root;" +
-                  "Password=SQLDatabase404"))
+                using (MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;" 
+                    + "Database=project_database;UserName= root;Password=SQLDatabase404"))
                 {
                     connection.Open();
                     MySqlCommand cmd = new MySqlCommand(query, connection);

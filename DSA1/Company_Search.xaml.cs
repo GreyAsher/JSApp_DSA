@@ -34,8 +34,10 @@ namespace DSA1
         public static List<Company> User_DataBase()
         {
             List<Company> companyList = new List<Company>();
-            string connectionString = "Server=127.0.0.1;Database=project_database;User ID=root;Password=SQLDatabase404";
-
+            string connectionString = "Server=127.0.0.1;" +
+"Database=project_database;UserName= root;" +
+"Password=SQLDatabase404";
+           
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
@@ -103,9 +105,9 @@ namespace DSA1
 
         private void Back_Button(object sender, RoutedEventArgs e)
         {
-            DB db = new DB();
+            DB cdb = new DB();
             this.Hide();
-            db.Show();
+            cdb.Show();
         }
     }
 }

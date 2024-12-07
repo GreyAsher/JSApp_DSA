@@ -8,6 +8,9 @@
         Title="Company_Profile" Height="518" Width="800">
     <Border Background="#274D60">
         <Grid>
+            <Grid.Background>
+                <ImageBrush Stretch="None" ImageSource="Images/3332.jpg" AlignmentY="Top" AlignmentX="Center"/>
+            </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <!-- Adjusted proportions -->
@@ -22,51 +25,43 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock  Text="LOGO/NAME"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Left"
-                        Foreground="#D5A021"
-                        FontSize="18"
-                        Margin="15,0,0,0" Height="28" Width="100"/>
-
             <StackPanel
                 Grid.Row="1" Margin="0,3,0,0">
                 <RadioButton x:Name="Profile_RB"
-                    Content="about"
+                    Content="About"
                     Height="40"
                     Foreground="White"
                     FontSize="14"
-                    Style="{StaticResource MenuButtons}" />
+                    Style="{StaticResource MenuButtons}" Margin="-30,55,0,0" Checked="Profile_RB_Checked" />
                 <RadioButton 
                     x:Name="Pending_Applications_RB"
                     Content="Job Hriing"
                     Height="40"
                     Foreground="White"
                     FontSize="14"
-                    Style="{StaticResource MenuButtons}" />
+                    Style="{StaticResource MenuButtons}" Margin="-30,15,0,0" VerticalAlignment="Bottom" />
                 <RadioButton 
                     x:Name="Notifications_RB"
                     Content="Notifications"
                     Height="40"
                     Foreground="White"
                     FontSize="14"
-                    Style="{StaticResource MenuButtons}" />
+                    Style="{StaticResource MenuButtons}" Margin="-30,15,0,0" />
                 <RadioButton 
                     x:Name="Messages_RB"
                     Content="Messages"
                     Height="40"
                     Foreground="White"
                     FontSize="14"
-                    Style="{StaticResource MenuButtons}"/>
+                    Style="{StaticResource MenuButtons}" Margin="-30,12,0,0"/>
 
                 <Grid Margin="10,200,10,0">
                     <RadioButton 
                         x:Name="Log_Out_RB"
                         Content="Log Out"
-                        Height="30"
                         Foreground="White"
                         FontSize="12"
-                        Style="{StaticResource MenuButtons}" Click="BackButton" />
+                        Style="{StaticResource MenuButtons}" Click="BackButton_btn" Margin="-28,-108,-5,78" />
                 </Grid>
             </StackPanel>
 
@@ -77,9 +72,9 @@
             <Grid/>
 
             <Grid Grid.Column="1" HorizontalAlignment="Center" Width="640" Grid.ColumnSpan="3"/>
-            <TextBlock Grid.Column="1" x:Name="Company_Name" Text="Colton Randolph" FontWeight="Bold" FontSize="26" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,46" Width="175" />
-            <TextBlock Grid.Column="1" x:Name="Company_Email" Text="Content strategist and conversion copywriter" FontSize="16" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <TextBlock Grid.Column="1" x:Name="Company_Address" Text="Wichita, Kansas Metropolitan Area" FontSize="14" Foreground="White" Margin="0,50,0,10" HorizontalAlignment="Center" />
+            <TextBlock Grid.Column="1" x:Name="Company_Name" Text="Colton Randolph" FontWeight="Bold" FontSize="26" Foreground="White" HorizontalAlignment="Left" Margin="182,19,0,27" Width="174" Grid.ColumnSpan="2" />
+            <TextBlock Grid.Column="1" x:Name="Company_Email" Text="Content strategist and conversion copywriter" FontSize="16" Foreground="White" Margin="110,49,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+            <TextBlock Grid.Column="1" x:Name="Company_Address" Text="Wichita, Kansas Metropolitan Area" FontSize="14" Foreground="White" Margin="162,69,0,418" HorizontalAlignment="Left" Grid.ColumnSpan="2" Grid.RowSpan="2" />
             <!-- Newsfeed Section -->
             <StackPanel Grid.Column="1" Grid.Row="1" Margin="10,50,10,0" VerticalAlignment="Top" Grid.ColumnSpan="3">
 
@@ -87,14 +82,14 @@
                            FontSize="16" 
                            FontWeight="Bold" 
                            Foreground="White" 
-                           Margin="0,-0,0,10" Height="30" VerticalAlignment="Center"/>
+                           Margin="0,-20,0,10" Height="30" VerticalAlignment="Center"/>
                 <ListBox x:Name="Newsfeed_ListBox"
-                         Background="#2E4E5C"
+                         Background="White"
                          Foreground="White"
                          BorderThickness="0"
                          Padding="5"
                          HorizontalContentAlignment="Stretch"
-                         Height="248">
+                         Height="308">
                     <!-- Additional newsfeed items can be dynamically added here -->
 
                     <!-- Sample Newsfeed Items -->
@@ -106,9 +101,10 @@
                     <Button Content="Add News"
                             Width="80"
                             Height="25"
-                            VerticalAlignment="Center"/>
+                            VerticalAlignment="Center" Margin="550,0,0,0"/>
                 </StackPanel>
             </StackPanel>
+            <Image Source="Images/UM_HIRE_Logo.jpg" HorizontalAlignment="Left" Height="78" Margin="10,10,0,0" VerticalAlignment="Top" Width="101" Grid.RowSpan="2"/>
         </Grid>
     </Border>
 </Window>

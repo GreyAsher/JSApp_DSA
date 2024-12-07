@@ -27,8 +27,8 @@ namespace DSA1
         public static List<Jobs> Job_DataBase()
         {
             List<Jobs> jobFeed = new List<Jobs>();
-            using (MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;" +
-                "Database=project_database;User ID=root;Password=SQLDatabase404"))
+            using (MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;" 
+                + "Database=project_database;UserName= root;" + "Password=SQLDatabase404"))
             {
                 try
                 {
@@ -47,6 +47,7 @@ namespace DSA1
                                 IsFilled = reader["is_filled"].ToString(),
                                 Job_id = Convert.ToInt32(reader["id"]),
                                 Company_userNumber = Convert.ToInt32(reader["Company_userNumber"])
+                                
                             };
                             jobFeed.Add(item);
                         }
@@ -75,11 +76,64 @@ namespace DSA1
             JobList.ItemsSource = filteredList;
         }
 
-        private void Search_btn(object sender, RoutedEventArgs e)
+        private int Company_Number = 0;
+        int Resume_Number = 1;
+        private void getJobs()
+        {
+            try
+            {
+                string query = "INSERT INTO resume_db (Profile_Name, Profile_Number, Entry_Time, Status, CompanyId, ResumeNumber) " +
+                               "VALUES (@Profile_Name, @Profile_Number, @Entry_Time, @Status, @CompanyId, @ResumeNumber)";
+
+                string name = MainWindow.applicantUserMapList2[MainWindow.userId].First_Name + " " +
+                    MainWindow.applicantUserMapList2[MainWindow.userId].Last_Name;
+
+                Resume_Class Resume = new Resume_Class()
+                {
+                    userProfile = name,
+                    CompanyID_Number = Company_Number,
+                    Applicant_Number = MainWindow.userId,
+                    Submitted_Date = DateTime.Now,
+                    Status = "Pending",
+                    Resume_Number = Resume_Number,
+                };
+
+                using (MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;Database=project_database;UserName=root;Password=SQLDatabase404"))
+                {
+                    connection.Open();
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Add parameters to the command
+                        command.Parameters.AddWithValue("@Profile_Name", Resume.userProfile);
+                        command.Parameters.AddWithValue("@Profile_Number", Resume.Applicant_Number);
+                        command.Parameters.AddWithValue("@Entry_Time", Resume.Submitted_Date);
+                        command.Parameters.AddWithValue("@Status", Resume.Status);
+                        command.Parameters.AddWithValue("@CompanyId", Resume.CompanyID_Number);
+                        command.Parameters.AddWithValue("@ResumeNumber", Resume.Resume_Number);
+
+                        // Execute the query
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        // Check if data was inserted
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Data inserted successfully!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No data was inserted.");
+                        }
+                    }
+                }
+            }
+            catch (Exception e) { MessageBox.Show("Error: " + e.Message); }
+        }
+
+            private void Search_btn(object sender, RoutedEventArgs e)
         {
             if (JobList.SelectedItem is Jobs selectedCompany)
             {
-                MessageBox.Show("Application send");
+                getJobs();
             }
         }
 
@@ -87,6 +141,7 @@ namespace DSA1
         {
             if (JobList.SelectedItem is Jobs selectedJobs)
             {
+                Company_Number = selectedJobs.Company_userNumber;
                 TheSelectedJobs = selectedJobs;
             }
         }

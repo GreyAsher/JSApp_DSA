@@ -27,12 +27,16 @@ namespace DSA1
         MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;" +
 "Database=project_database;UserName= root;" +
 "Password=SQLDatabase404");
-
+        //This dictionary is for getting the password of the company or applicant signed in.
         public static Dictionary<string, string> applicantMapList = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-        public static Dictionary<string, int> applicantMapList1 = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        //This dictionary is for getting the userID based on the account signed in.
+       public static Dictionary<string, int> applicantMapList1 = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        //This disctionary is for getting the user account depending on the ID given.
         public static Dictionary<int, User> applicantUserMapList2 = new Dictionary<int, User>();
+       //This dictionary gets the user depending on the name of the applicant.
         public static Dictionary<string, User> applicantUserByString = new Dictionary<string, User>(StringComparer.OrdinalIgnoreCase);
 
+        //This code has the same function as the code above.
         public static Dictionary<string, string> companyMapList = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         public static Dictionary<string, int> companyMapList1 = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
         public static Dictionary<int, Company> companyUserMapList2 = new Dictionary<int, Company>();
@@ -41,7 +45,7 @@ namespace DSA1
         public static int userId;
         public static int companyID;
 
-        public void ClearMemory()
+        public static void ClearMemory()
         {
             applicantMapList.Clear();
             applicantMapList1.Clear();
@@ -129,41 +133,41 @@ namespace DSA1
 
         public bool LoggedIn(string username, string password, out int userId, out bool isCompany)
         {
-            // Check if the username and password match an applicant account
+           
             if (applicantMapList.TryGetValue(username, out string storedApplicantPassword))
             {
                 if (storedApplicantPassword == password)
                 {
-                    userId = applicantMapList1[username]; // Retrieve the userId based on the email
+                    userId = applicantMapList1[username]; 
                     isCompany = false;
                     return true;
                 }
             }
 
-            // Check if the username and password match a company account
+     
             if (companyMapList.TryGetValue(username, out string storedCompanyPassword))
             {
                 if (storedCompanyPassword == password)
                 {
-                    userId = companyMapList1[username]; // Retrieve the companyId based on the email
+                    userId = companyMapList1[username]; 
 
                     isCompany = true;
                     return true;
                 }
             }
 
-            userId = 0; // Set to 0 if the login fails
+            userId = 0;
             isCompany = false;
             return false;
         }
 
         private void Log_In_Button_Click(object sender, RoutedEventArgs e)
         {
-            // Get sanitized inputs
+      
             string sanitizedUsername = UsernameTextBox.Text.Trim();
             string sanitizedPassword = PasswordTxtBox.Password;
 
-            // Check if the user can log in
+         
             if (LoggedIn(sanitizedUsername, sanitizedPassword, out userId, out bool isCompany))
             {
                 MessageBox.Show("User ID: " + userId);

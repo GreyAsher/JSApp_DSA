@@ -24,6 +24,8 @@ namespace DSA1
             names = getNames();
             LoadComboBoxData();
             LoadNewsfeed();
+
+            Applicant_search.As_WindowTracker = 1;
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
@@ -54,9 +56,9 @@ namespace DSA1
 
         private void Log_Out_Button(object sender, RoutedEventArgs e)
         {
+            MainWindow.ClearMemory();
             MainWindow loginWindow = new MainWindow();
-            loginWindow.ClearMemory();
-            this.Hide();
+            this.Close();
             loginWindow.Show();
         }
 
@@ -78,8 +80,8 @@ namespace DSA1
         {
             List<NewsFeed> newsFeed = new List<NewsFeed>();
             using (MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;" +
-    "Database=project_database;UserName= root;" +
-    "Password=SQLDatabase404"))
+"Database=project_database;UserName= root;" +
+"Password=SQLDatabase404"))
             {
                 try
                 {
@@ -176,8 +178,8 @@ namespace DSA1
     private void LoadComboBoxData()
         {
             MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;" +
-    "Database=project_database;UserName= root;" +
-    "Password=SQLDatabase404");
+"Database=project_database;UserName= root;" +
+"Password=SQLDatabase404");
             string query = "SELECT first_name,last_name FROM applicant_accounts";
 
             try
@@ -247,6 +249,7 @@ namespace DSA1
 
         private void company_search(object sender, RoutedEventArgs e)
         {
+            Company_Profile.WindowNumber = 1;
             Company_Search cs = new Company_Search();
             this.Hide();
             cs.Show();
