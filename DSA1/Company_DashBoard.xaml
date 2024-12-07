@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DSA1"
         mc:Ignorable="d"
-        Title="Company_DashBoard" Height="470" Width="900">
+        Title="Company_DashBoard" Height="570" Width="900">
     <Border Background="#274D60" Height="460">
-        <Grid Margin="0,-10,0,-11" Height="460">
+        <Grid Margin="0,-47,0,-46">
             <Grid.Background>
                 <ImageBrush Stretch="None" ImageSource="Images/3332.jpg" AlignmentY="Top" AlignmentX="Center"/>
             </Grid.Background>
@@ -62,7 +62,7 @@
                         Height="30"
                         Foreground="White"
                         FontSize="12"
-                        Style="{StaticResource MenuButtons}" Margin="-30,-200,-1,111" Click="Log_out_btn"/>
+                        Style="{StaticResource MenuButtons}" Margin="-24,-63,-7,33" Click="Log_out_btn"/>
                 </Grid>
             </StackPanel>
 
@@ -81,7 +81,7 @@
             </Grid>
 
             <!-- Newsfeed Section -->
-            <StackPanel Grid.Column="1" Grid.Row="1" Margin="10,10,10,0" VerticalAlignment="Top" Grid.ColumnSpan="3">
+            <StackPanel Grid.Column="1" Grid.Row="1" Margin="10,-20,10,0" VerticalAlignment="Top" Grid.ColumnSpan="3">
 
                 <TextBlock Text="Applicant Avilable" 
                            FontSize="16" 
@@ -95,7 +95,7 @@
                          Margin="0,0,0,10"
                          Padding="5"
                          HorizontalContentAlignment="Stretch"
-                         Height="271" Width="610">
+                         Height="402" Width="708">
                     <!-- Additional newsfeed items can be dynamically added here -->
                     <!-- Sample Newsfeed Items -->
                     <ListBoxItem x:Name="LBI_name"/>
@@ -105,7 +105,7 @@
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                     <Button Content="Add News"
                             Width="100"
-                            Height="25" Margin="520,-5,0,0"
+                            Height="25" Margin="620,-5,0,0"
                             />
                 </StackPanel>
             </StackPanel>

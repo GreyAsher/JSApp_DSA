@@ -24,7 +24,7 @@ namespace DSA1
             List<Jobs> jobFeed = new List<Jobs>();
             using (MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;" +
             "Database=project_database;UserName= root;" +
-            "Password=SQLD"))
+            "Password=SQLDatabase404"))
             {
                 try
                 {
@@ -84,6 +84,11 @@ namespace DSA1
             MainWindow mw = new MainWindow();
             mw.Show();
             this.Close();
+        }
+
+        private void Messages_RB_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -36,7 +36,7 @@ namespace DSA1
                     usersList.Add(user);
                 }
             }
-            friendListGrid.ItemsSource = usersList;
+           // friendListGrid.ItemsSource = usersList;
         }
     }
 }
