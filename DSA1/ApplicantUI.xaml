@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DSA1"
         mc:Ignorable="d"
-        Title="ApplicantUI" Height="450" Width="800">
+        Title="ApplicantUI" Height="670" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

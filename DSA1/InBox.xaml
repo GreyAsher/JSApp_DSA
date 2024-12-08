@@ -5,18 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DSA1"
         mc:Ignorable="d"
-        Title="InBox" Height="700" Width="1200">
+        Title="InBox" Height="670" Width="1000">
     <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="None" ImageSource="Images/3332.jpg" AlignmentY="Top" AlignmentX="Center"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="189"/>
             <!-- Navigation Pane -->
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition/>
             <!-- Main Content -->
         </Grid.ColumnDefinitions>
 
         <!-- Navigation Pane -->
-        <StackPanel Grid.Column="0" Background="#F7F7F7">
-            <Button Content="Compose" Margin="10" Height="50" Background="#0078D4" Foreground="White" FontWeight="Bold" HorizontalAlignment="Stretch"/>
+        <StackPanel Grid.Column="0" Background="Transparent">
+            <Button Content="Compose" 
+                Margin="10" 
+                Height="50" 
+                Foreground="White" 
+                FontWeight="Bold" 
+                HorizontalAlignment="Stretch">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="#d4ac0d" 
+                            CornerRadius="5" 
+                            BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
 
             <ListBox Margin="10,20,10,0">
                 <ListBoxItem>
@@ -68,29 +88,40 @@
             </Grid.RowDefinitions>
 
             <!-- Header -->
-            <DockPanel Background="#F7F7F7" Margin="0,0,0,10" Height="50">
+            <DockPanel Background="Transparent" Margin="0,0,0,10" Height="50">
                 <!-- Back Button -->
                 <Button Content="Back" 
-                        Width="80" 
-                        Height="30" 
-                        Background="#0078D4" 
-                        Foreground="White" 
-                        FontWeight="Bold" 
-                        Margin="10,0" 
-                        VerticalAlignment="Center" 
-                        HorizontalAlignment="Left"
-                        Click="BackButton_Click"/>
+        Width="80" 
+        Height="30" 
+        Foreground="White" 
+        FontWeight="Bold" 
+        Margin="10,0" 
+        VerticalAlignment="Center" 
+        HorizontalAlignment="Left" 
+        Click="BackButton_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="#FFD4AC0D" 
+                    CornerRadius="5" 
+                    BorderThickness="0">
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
 
                 <TextBox x:Name="SearchTextBox" Width="400" Height="30" Margin="10" VerticalAlignment="Center"/>
-                <Button Content="Filter" Margin="5" Background="Transparent" Foreground="#0078D4" VerticalAlignment="Center"/>
+                <Button Content="Filter" Margin="5" Background="Transparent" Foreground="White" VerticalAlignment="Center"/>
             </DockPanel>
 
             <!-- Content -->
             <Grid Grid.Row="1" Margin="10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="232*"/>
                     <!-- Message List -->
-                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="559*"/>
                     <!-- Message Content -->
                 </Grid.ColumnDefinitions>
 

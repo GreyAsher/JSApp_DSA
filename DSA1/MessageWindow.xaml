@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:modernUIDesign.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="670" d:DesignWidth="1000"
             Background="Transparent">
     <Grid>
         <!-- Left Sidebar -->
@@ -14,7 +14,7 @@
         </Grid.Background>
         <Grid Background="Transparent" Width="250" HorizontalAlignment="Left">
             <StackPanel Margin="10">
-                <TextBlock Text="Search Conversations" FontSize="14" FontWeight="Bold" Foreground="#FFD700" Margin="0,0,0,10"/>
+                <TextBlock Text="Search Conversations" FontSize="14" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
                 <TextBox Height="30" Margin="0,0,0,20"/>
 
                 <!-- Chat List -->
@@ -67,7 +67,7 @@
                     <Grid.Background>
                         <ImageBrush Stretch="None" ImageSource="Images/3332.jpg" AlignmentY="Top" AlignmentX="Center"/>
                     </Grid.Background>
-                    <TextBlock Text="Michael Wong" Foreground="#FFD700" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" FontSize="16" FontWeight="Bold"/>
+                    <TextBlock Text="Michael Wong" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" FontSize="16" FontWeight="Bold"/>
                 </Grid>
 
                 <!-- Messages -->
@@ -84,9 +84,23 @@
         <Grid Background="Transparent" Width="250" HorizontalAlignment="Right">
             <StackPanel Margin="10">
                 <Ellipse Width="80" Height="80" Fill="Gray" HorizontalAlignment="Center"/>
-                <TextBlock Text="Michael Wong" FontWeight="Bold" FontSize="14" TextAlignment="Center" Foreground="#800000"/>
-                <TextBlock Text="UX/UI Designer" TextAlignment="Center" Foreground="#800000"/>
-                <Button Content="Edit Profile" Background="#800000" Foreground="White" Margin="0,10,0,0"/>
+                <TextBlock Text="Michael Wong" FontWeight="Bold" FontSize="14" TextAlignment="Center" Foreground="White"/>
+                <TextBlock Text="UX/UI Designer" TextAlignment="Center" Foreground="White"/>
+                <Button Content="Edit Profile" 
+                    Background="#d4ac0d" 
+                    Foreground="White" 
+                    Margin="0,10,0,0" Height="25">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="#d4ac0d" 
+                                CornerRadius="5" 
+                                BorderThickness="0">
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
         </Grid>
     </Grid>

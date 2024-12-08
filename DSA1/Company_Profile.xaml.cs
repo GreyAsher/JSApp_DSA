@@ -129,5 +129,10 @@ namespace DSA1
                     break;
             }
         }
+
+        private void Log_Out_RB_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DSA1"
         mc:Ignorable="d"
-        Title="Register" Height="450" Width="800">
+        Title="Register" Height="570" Width="900">
     <Grid Background="White">
         <!-- Left Section -->
 
@@ -20,7 +20,7 @@
             </Border.Background>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="Images/UM_HIRE_Logo.jpg" Height="140" Width="175" Margin="0,-20,0,0"/>
-                <TextBlock FontSize="26" FontWeight="Bold" Foreground="White" Text="Let's get you set up" Margin="0,50,0,10"/>
+                <TextBlock FontSize="26" FontWeight="Bold" Foreground="White" Text="Let's get you set up" Margin="0,120,0,10"/>
                 <TextBlock FontSize="16" Foreground="White" Text="It should only take a couple of minutes to pair with your watch." TextAlignment="Center" Width="200"/>
                 <Button Width="50" Height="50" Margin="0,20,0,0" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Content="➡"/>
             </StackPanel>
@@ -30,45 +30,45 @@
         <!-- Right Section -->
         <Grid Grid.Column="1" Margin="20">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" MinHeight="61.92"/>
+                <RowDefinition Height="Auto" MinHeight="45.96"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" MinHeight="110"/>
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" Content="Fist name&#xD;&#xA;" Margin="10"/>
-            <TextBox Grid.Row="0" VerticalAlignment="Center" Margin="100,10,20,10"/>
+            <Label Grid.Row="0" Content="Fist name&#xD;&#xA;" Margin="10,10,10,10"/>
+            <TextBox VerticalAlignment="Center" Margin="100,0,20,0" Height="18"/>
 
-            <Label Grid.Row="1" Content="Last name" Margin="10"/>
-            <TextBox Grid.Row="1" VerticalAlignment="Center" Margin="100,10,20,10"/>
+            <Label Grid.Row="1" Content="Last name" Margin="10,10,10,10"/>
+            <TextBox Grid.Row="1" VerticalAlignment="Center" Margin="100,0,20,0" Height="18"/>
 
-            <Label Grid.Row="2" Content="Gender" Margin="10"/>
-            <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,10,20,10">
+            <Label Grid.Row="2" Content="Gender" Margin="10,10,10,10"/>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,0,20,0" Height="15">
                 <RadioButton Content="Male" GroupName="Gender" Margin="0,0,20,0"/>
                 <RadioButton Content="Female" GroupName="Gender" />
             </StackPanel>
 
-            <Label Grid.Row="3" Content="Job Position" Margin="10"/>
-            <TextBox Grid.Row="3" VerticalAlignment="Center" Margin="100,10,20,10"/>
+            <Label Grid.Row="3" Content="Job Position" Margin="10,10,10,10"/>
+            <TextBox Grid.Row="3" VerticalAlignment="Center" Margin="100,0,20,0" Height="18"/>
 
-            <Label Grid.Row="4" Content="Email" Margin="10"/>
-            <TextBox Grid.Row="4" VerticalAlignment="Center" Margin="100,10,20,10"/>
+            <Label Grid.Row="4" Content="Email" Margin="10,10,10,10"/>
+            <TextBox Grid.Row="4" VerticalAlignment="Center" Margin="100,0,20,0" Height="18"/>
 
-            <Label Grid.Row="5" Content="Mobile" Margin="10"/>
-            <TextBox Grid.Row="5" VerticalAlignment="Center" Margin="100,10,20,10"/>
+            <Label Grid.Row="5" Content="Mobile" Margin="10,10,10,10"/>
+            <TextBox Grid.Row="5" VerticalAlignment="Center" Margin="100,0,20,0" Height="18"/>
 
-            <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,70,20,0">
+            <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,70,20,0" Width="220">
                 <Button x:Name="Cancel_Button" Content="Cancel" Width="100" Margin="5" Click="Cancel_Click"/>
                 <Button Content="Next" Width="100" Margin="5" Background="#d4ac0d" Foreground="White"/>
             </StackPanel>
             <Label Grid.Row="7" Margin="1,15,9,59">
                 <Label Content="Address" Height="26" Width="87"/>
             </Label>
-            <TextBox Grid.Row="7" VerticalAlignment="Top" Margin="97,22,23,0"/>
+            <TextBox Grid.Row="7" VerticalAlignment="Top" Margin="97,22,23,0" Height="18"/>
         </Grid>
     </Grid>
 </Window>

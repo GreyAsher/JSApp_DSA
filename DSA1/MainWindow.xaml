@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DSA1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="570" Width="900">
     <Grid>
 
         <Grid.Background>
@@ -36,7 +36,7 @@
         <!-- Sign In Section -->
         <Border Grid.Column="1" Background="White" Padding="20" VerticalAlignment="Stretch">
             <StackPanel>
-                <TextBlock Text="Sign In" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                <TextBlock Text="Sign In" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,20"/>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
                     <Border CornerRadius="10" Background="#d4ac0d" Margin="5">
@@ -65,15 +65,15 @@
                 <TextBlock Text="Or use email to sign in" FontSize="14" HorizontalAlignment="Center" Margin="0,10,0,20"/>
 
                 <StackPanel Orientation="Vertical" Margin="0,0,0,10">
-                    <TextBlock Text="Email" Width="330"/>
+                    <TextBlock Text="Email" Width="330" Margin="0,80,0,0"/>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <Image Source="Images/usernameIcon.png" Width="20" Height="20" Margin="25,0,5,0"/>
-                        <Border CornerRadius="5" Background="White" BorderBrush="Gray" BorderThickness="1" Width="270" Height="25">
-                            <TextBox Width="260" Height="23" 
+                        <Border CornerRadius="5" Background="White" BorderBrush="Gray" BorderThickness="1" Width="340" Height="25">
+                            <TextBox Height="23" 
                  Background="Transparent" 
                  BorderThickness="0" 
                  VerticalContentAlignment="Center" 
-                 x:Name="UsernameTextBox"/>
+                 x:Name="UsernameTextBox" Margin="-1,1,-1,-1"/>
                         </Border>
 
                     </StackPanel>
@@ -83,12 +83,12 @@
                     <TextBlock Text="Password" Width="330" Margin="0,15,0,0"/>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <Image Source="Images/passwordIcon.png" Width="20" Height="20" Margin="25,0,5,0"/>
-                        <Border CornerRadius="5" Background="White" BorderBrush="Gray" BorderThickness="1" Width="270" Height="25">
-                            <PasswordBox Width="260" Height="23" 
+                        <Border CornerRadius="5" Background="White" BorderBrush="Gray" BorderThickness="1" Width="340" Height="25">
+                            <PasswordBox Height="23" 
                                  Background="Transparent" 
                                  BorderThickness="0" 
                                  VerticalContentAlignment="Center" 
-                                 x:Name="PasswordTxtBox"/>
+                                 x:Name="PasswordTxtBox" Margin="-1,0,-1,0"/>
                         </Border>
 
                     </StackPanel>

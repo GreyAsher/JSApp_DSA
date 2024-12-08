@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DSA1"
         mc:Ignorable="d"
-        Title="UserProfile" Height="1080" Width="1024">
+        Title="UserProfile" Height="670" Width="1000">
     <Grid>
 
         <Grid.RowDefinitions>
